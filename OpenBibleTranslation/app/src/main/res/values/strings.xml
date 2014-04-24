@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OpenBibleTranslation</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="splash">Open Bible Translation</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_menu_list">MenuListActivity</string>
+    <string name="title_activity_detail">Detail</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_fragment_text">Default Fragment Text</string>
+    <string name="translate_hint">Enter Translation Here</string>
+    <string name="translate_note_hint">Enter Translation Note Here</string>
+    <string name="title_activity_translation_detail">TranslationDetail</string>
+
+</resources>
