@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.door43.obt.ata.TranslationFragment"
+    android:orientation="vertical"
+    android:weightSum="5">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/hello_world"
+        android:id="@+id/AddSource"
+        android:layout_weight="1"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/translate_hint"
+        android:inputType="text"
+        android:background="#ff5fd9"
+        android:id="@+id/AddTranslation"
+        android:layout_weight="2"
+        android:gravity="top"
+        android:textSize="@dimen/text_size" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="5"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:hint="@string/translate_note_hint"
+        android:background="#fffe33"
+        android:id="@+id/AddNotes"
+        android:layout_weight="2"
+        android:gravity="top"
+        android:textSize="@dimen/text_size"/>
+
+</LinearLayout>
