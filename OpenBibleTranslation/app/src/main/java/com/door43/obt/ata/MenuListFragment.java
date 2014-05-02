@@ -67,7 +67,7 @@ public class MenuListFragment extends Fragment {
 
 
 
-        menuList.setAdapter(new rowAdapter(rootView.getContext(), items, imgs));
+        menuList.setAdapter(new RowAdapter(rootView.getContext(), items, imgs));
 
 
         menuList.setOnItemClickListener(new AdapterView.OnItemClickListener(){

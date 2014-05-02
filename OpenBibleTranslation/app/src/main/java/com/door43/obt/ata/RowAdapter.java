@@ -14,14 +14,14 @@ import android.widget.TextView;
  * custom adapter for a row in the menu
  */
 
-public class rowAdapter extends BaseAdapter {
+public class RowAdapter extends BaseAdapter {
 
     Context context;
     String[] data;
     String[] imgsrc;
     private static LayoutInflater inflater = null;
 
-    public rowAdapter(Context context, String[] data, String[] imgsrc) {
+    public RowAdapter(Context context, String[] data, String[] imgsrc) {
         // TODO Auto-generated constructor stub
         this.context = context;
         this.data = data;
