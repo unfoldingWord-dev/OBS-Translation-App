@@ -21,6 +21,8 @@ public abstract class PersistenceObject implements IPersistenceObject {
 
     /* METHODS */
 
+    /* GETTERS AND SETTERS */
+
     @Override
     public Integer getId() {
         return id;
@@ -51,7 +53,6 @@ public abstract class PersistenceObject implements IPersistenceObject {
         this.updated = updated;
     }
 
-    /* GETTERS AND SETTERS */
 
     /* OBJECT METHODS */
 

@@ -16,6 +16,8 @@ public class Text implements IText {
 
     /* METHODS */
 
+    /* GETTERS AND SETTERS */
+
     @Override
     public String getFrameId() {
         return frameId;
@@ -46,8 +48,35 @@ public class Text implements IText {
         this.text = text;
     }
 
-    /* GETTERS AND SETTERS */
-
     /* OBJECT METHODS */
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Text{");
+        sb.append("frameId='").append(frameId).append('\'');
+        sb.append(", langCode='").append(langCode).append('\'');
+        sb.append('}');
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Text)) return false;
+
+        Text text = (Text) o;
+
+        if (frameId != null ? !frameId.equals(text.frameId) : text.frameId != null) return false;
+        if (langCode != null ? !langCode.equals(text.langCode) : text.langCode != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = frameId != null ? frameId.hashCode() : 0;
+        result = 31 * result + (langCode != null ? langCode.hashCode() : 0);
+        return result;
+    }
 }

@@ -75,4 +75,12 @@ public class TranslationNotes implements ITranslationNotes {
 
     /* OBJECT METHODS */
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("TranslationNotes{");
+        sb.append("frameId='").append(frameId).append('\'');
+        sb.append(", terms=").append(terms.size());
+        sb.append('}');
+        return sb.toString();
+    }
 }
