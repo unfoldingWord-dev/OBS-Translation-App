@@ -12,6 +12,16 @@ public class Term implements ITerm {
 
     /* CONSTRUCTOR */
 
+    public Term() {
+        super();
+    }
+
+    public Term(String word, String description) {
+        this();
+        this.word = word;
+        this.description = description;
+    }
+
     /* METHODS */
 
     /* GETTERS / SETTERS */
