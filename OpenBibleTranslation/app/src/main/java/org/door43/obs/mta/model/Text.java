@@ -14,6 +14,17 @@ public class Text implements IText {
 
     /* CONSTRUCTORS */
 
+    public Text() {
+        super();
+    }
+
+    public Text(String frameId, String langCode, String text) {
+        this();
+        this.frameId = frameId;
+        this.langCode = langCode;
+        this.text = text;
+    }
+
     /* METHODS */
 
     /* GETTERS AND SETTERS */
