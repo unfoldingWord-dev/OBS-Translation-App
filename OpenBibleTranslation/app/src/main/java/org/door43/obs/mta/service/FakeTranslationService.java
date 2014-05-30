@@ -57,10 +57,17 @@ public class FakeTranslationService implements ITranslationService {
 
         ITerm term2 = new Term("mountainside","That is, “the side of a mountain.”");
 
-        notes.addTerm(term1);
-        notes.addTerm(term2);
+        final String notesString =
+                "he dismissed the crowd - This is another way of saying, “he sent the crowd on their way” or, “he told the crowd of people to go back to their homes." +
+                        "\n\nmountainside - That is, “the side of a mountain.”\"";
+
+        notes.setNotes(notesString);
 
         return notes;
+    }
+
+    public void close(){
+        // no resource to close
     }
 
     /* GETTERS AND SETTERS */

@@ -11,11 +11,11 @@ public abstract class PersistenceObject implements IPersistenceObject {
 
     /* FIELDS */
 
-    private Integer id;
+    private Long id;
 
     private Date created;
 
-    private Date updated;
+    private Date modified;
 
     /* CONSTRUCTORS */
 
@@ -24,12 +24,12 @@ public abstract class PersistenceObject implements IPersistenceObject {
     /* GETTERS AND SETTERS */
 
     @Override
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
     @Override
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,13 +44,13 @@ public abstract class PersistenceObject implements IPersistenceObject {
     }
 
     @Override
-    public Date getUpdated() {
-        return updated;
+    public Date getModified() {
+        return modified;
     }
 
     @Override
-    public void setUpdated(Date updated) {
-        this.updated = updated;
+    public void setModified(Date modified) {
+        this.modified = modified;
     }
 
 

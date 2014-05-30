@@ -14,6 +14,17 @@ public class Translation extends PersistenceObject implements ITranslation {
 
     /* CONSTRUCTORS */
 
+    public Translation() {
+        super();
+    }
+
+    public Translation(String frameId, String langCode, String text) {
+        this();
+        this.frameId = frameId;
+        this.langCode = langCode;
+        this.text = text;
+    }
+
     /* METHODS */
 
     /* GETTERS AND SETTERS */

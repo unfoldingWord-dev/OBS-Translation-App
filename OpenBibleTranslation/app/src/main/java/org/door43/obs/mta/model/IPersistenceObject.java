@@ -10,13 +10,13 @@ public interface IPersistenceObject {
     /**
      * @return ID used as primary key for storing in DB.
      */
-    Integer getId();
+    Long getId();
 
     /**
      * Sets objects ID to be used as primary key for storing in DB.
      * @param id
      */
-    void setId(Integer id);
+    void setId(Long id);
 
     /**
      * @return Date of object creation
@@ -30,14 +30,14 @@ public interface IPersistenceObject {
     void setCreated(Date created);
 
     /**
-     * @return Date of last object's update.
+     * @return Date of last object's modification.
      */
-    Date getUpdated();
+    Date getModified();
 
     /**
      * Sets date of last object's update.
-     * @param updated
+     * @param modified
      */
-    void setUpdated(Date updated);
+    void setModified(Date modified);
 
 }

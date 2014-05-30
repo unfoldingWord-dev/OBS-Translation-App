@@ -40,4 +40,8 @@ public interface ITranslationService {
      */
     public ITranslationNotes loadTranslationNotes(String frameId);
 
+    /**
+     * Closes required resources like DB etc.
+     */
+    public void close();
 }

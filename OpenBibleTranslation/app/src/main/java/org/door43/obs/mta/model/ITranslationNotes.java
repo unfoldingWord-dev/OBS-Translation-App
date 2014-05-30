@@ -6,8 +6,6 @@ import java.util.Set;
  * ITranslation note object:
  * <ul>
  *     <li>holds translation notes for one frame</li>
- *     <li>provide methods for adding/removing/searching {@link org.door43.obs.mta.model.ITerm}
- *     objects</li>
  * </ul>
  */
 public interface ITranslationNotes {
@@ -25,37 +23,14 @@ public interface ITranslationNotes {
     void setFrameId(String frameId);
 
     /**
-     * Adds given term to translation notes.
-     * @param term
-     * @return True if term was added to set.
+     * @return Notes string.
      */
-    public boolean addTerm(ITerm term);
+    String getNotes();
 
     /**
-     * Replaces given term in translation notes.
-     * @param term
-     * @return True if term was replaced in translation notes.
+     * Set notes.
+     * @param notes Can be string or HTML or whatever for now.
      */
-    boolean replaceTerm(ITerm term);
-
-    /**
-     * Deletes given term from translation notes.
-     * @param term
-     * @return True if given term was deleted from translation notes.
-     */
-    boolean deleteTerm(ITerm term);
-
-    /**
-     * Sets terms for translation notes.
-     * @param terms
-     */
-    void setTerms(Set<ITerm> terms);
-
-    /**
-     * Returns all terms for translation notes.<br/>
-     * This method should never return null!
-     * @return
-     */
-    Set<ITerm> getTerms();
+    void setNotes(String notes);
 
 }
