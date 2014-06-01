@@ -1,15 +1,15 @@
 package org.door43.obs.mta.db;
 
-import static org.door43.obs.mta.db.ConstTranslations.*;
-import static org.door43.obs.mta.db.ConstTranslations.A_CREATED;
-
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import static org.door43.obs.mta.db.ConstTranslations.A_CREATED;
+import static org.door43.obs.mta.db.ConstTranslations.A_FRAME;
+import static org.door43.obs.mta.db.ConstTranslations.A_ID;
+import static org.door43.obs.mta.db.ConstTranslations.A_LANG_CODE;
+import static org.door43.obs.mta.db.ConstTranslations.A_MODIFIED;
+import static org.door43.obs.mta.db.ConstTranslations.A_TEXT;
+import static org.door43.obs.mta.db.ConstTranslations.TABLE_NAME;
 
 public class TranslationDBHelper extends AbstractDBHelper {
 

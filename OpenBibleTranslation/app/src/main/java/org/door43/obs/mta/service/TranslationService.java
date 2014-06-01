@@ -1,17 +1,29 @@
 package org.door43.obs.mta.service;
 
-import static org.door43.obs.mta.db.ConstTranslations.*;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import org.door43.obs.mta.db.TranslationDBHelper;
 import org.door43.obs.mta.model.IText;
 import org.door43.obs.mta.model.ITranslation;
 import org.door43.obs.mta.model.ITranslationNotes;
+import org.door43.obs.mta.model.Text;
 import org.door43.obs.mta.model.Translation;
+import org.door43.obs.mta.util.AssetsUtil;
+import org.door43.obs.mta.util.StringUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import static org.door43.obs.mta.db.ConstTranslations.A_CREATED;
+import static org.door43.obs.mta.db.ConstTranslations.A_FRAME;
+import static org.door43.obs.mta.db.ConstTranslations.A_ID;
+import static org.door43.obs.mta.db.ConstTranslations.A_LANG_CODE;
+import static org.door43.obs.mta.db.ConstTranslations.A_MODIFIED;
+import static org.door43.obs.mta.db.ConstTranslations.A_TEXT;
+import static org.door43.obs.mta.db.ConstTranslations.TABLE_NAME;
 
 /**
  * Default implementation of {@link ITranslationService}
@@ -68,6 +80,14 @@ public class TranslationService implements ITranslationService {
 
         long result = -1;
 
+        if (translation == null) {
+            throw new IllegalArgumentException("Translation can't be null.");
+        }
+
+        if (StringUtils.isBlank(translation.getFrameId())) {
+            throw new IllegalArgumentException("Translation must have frameId set.");
+        }
+
         try {
 
             helper.checkBeforeSave(translation);
@@ -106,7 +126,27 @@ public class TranslationService implements ITranslationService {
 
     @Override
     public IText loadOriginalText(String frameId, String langCode) {
-        return null;
+
+        IText text = new Text(frameId, langCode, "Nothing loaded...");
+
+        // Read json from path: \assets\obs-text-en\01-01.json
+        String path = "obs-text-en" + "/" + frameId + ".json";
+
+        String docText = AssetsUtil.readTextFromAsset(path, context);
+
+        if (StringUtils.isBlank(docText)) {
+            text.setText("Nothing loaded for frameId = " + frameId + ", langCode = " + langCode);
+        } else {
+            try {
+                JSONObject json = new JSONObject(docText);
+                text.setText(json.getString("text"));
+            } catch (JSONException e) {
+                Log.e(TranslationService.class.getName(),
+                        "Error while parsing JSON file of original text: " + docText, e);
+            }
+        }
+
+        return text;
     }
 
     @Override
