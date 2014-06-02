@@ -1,8 +1,5 @@
 package org.door43.obs.mta.model;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 public class TranslationNotes implements ITranslationNotes {
 
 	/* CONSTANTS */
@@ -11,7 +8,7 @@ public class TranslationNotes implements ITranslationNotes {
 
     private String frameId;
 
-    private Set<ITerm> terms = new LinkedHashSet<ITerm>();
+    private String notes;
 
     /* CONSTRUCTORS */
 
@@ -21,56 +18,22 @@ public class TranslationNotes implements ITranslationNotes {
 
     @Override
     public String getFrameId() {
-        return null;
+        return frameId;
     }
 
     @Override
     public void setFrameId(String frameId) {
-
+        this.frameId = frameId;
     }
 
     @Override
-    public boolean addTerm(ITerm term) {
-
-        if (term != null) {
-            return this.terms.add(term);
-        }
-
-        return false;
+    public String getNotes() {
+        return notes;
     }
 
     @Override
-    public boolean replaceTerm(ITerm term) {
-
-        if (term != null && terms.contains(term)) {
-            terms.remove(term);
-            terms.add(term);
-            return true;
-        }
-
-        return false;
-
-    }
-
-    @Override
-    public boolean deleteTerm(ITerm term) {
-        if (term != null) {
-            return this.terms.remove(term);
-        }
-        return false;
-    }
-
-    @Override
-    public void setTerms(Set<ITerm> terms) {
-        this.terms.clear();
-        if (terms != null && !terms.isEmpty()) {
-            this.terms.addAll(terms);
-        }
-    }
-
-    @Override
-    public Set<ITerm> getTerms() {
-        return terms;
+    public void setNotes(String notes) {
+        this.notes = notes;
     }
 
     /* OBJECT METHODS */
@@ -79,7 +42,7 @@ public class TranslationNotes implements ITranslationNotes {
     public String toString() {
         final StringBuilder sb = new StringBuilder("TranslationNotes{");
         sb.append("frameId='").append(frameId).append('\'');
-        sb.append(", terms=").append(terms.size());
+        sb.append(", notes=").append(notes);
         sb.append('}');
         return sb.toString();
     }
