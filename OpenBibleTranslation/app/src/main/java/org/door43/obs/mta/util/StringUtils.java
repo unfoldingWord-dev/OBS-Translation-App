@@ -20,11 +20,18 @@ public class StringUtils {
      */
     public static boolean isBlank(String text) {
 
-        if (text == null || text.trim().length() == 0) {
+        int strLen = 0;
+        if (text == null || (strLen = text.trim().length()) == 0) {
             return true;
         }
 
-        return false;
+        //Consider whitespace to determine if it is blank
+        for (int i = 0; i < strLen; i++) {
+            if ((!Character.isWhitespace(text.charAt(i)))) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /* GETTERS AND SETTERS */
